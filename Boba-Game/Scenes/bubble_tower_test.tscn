@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmiyamwqyl28a"]
+[gd_scene load_steps=4 format=3 uid="uid://cmiyamwqyl28a"]
 
 [ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="1_6ls5c"]
+[ext_resource type="Script" path="res://Scripts/bubble_tower_.gd" id="1_f02bc"]
 [ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_strjq"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_f02bc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_6ls5c")

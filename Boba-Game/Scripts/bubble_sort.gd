@@ -1,9 +1,11 @@
 extends Node
 
 @export var size = 5
+@export var dist_x = 250
+@export var dist_y = 250
 
 var size_arr = []
-var bubble_tower_base = load("res://Scenes/bubble_tower_test.tscn");
+var bubble_tower_base = load("res://Scenes/bubble_tower_test.tscn")
 var bbl_arr = []
 
 
@@ -17,11 +19,14 @@ func _ready() -> void:
 		if(size_arr.find(rand_int) < 0):
 			size_arr.append(rand_int)
 			var child = bubble_tower_base.instantiate()
-			child.position.x = self.position.x
-			child.position.y = self.position.y
+			child.init(dist_y, size_arr[-1] - 1, self.position.x, -dist_y)
+			#child.get_script().size = self.size - 1
+			#child.position.x = self.position.x
+			#child.position.y = self.position.y
 			bbl_arr.append(child)
 			self.add_child(bbl_arr[-1])
-			self.position.x += 200
+			child.copy_up()
+			self.position.x += dist_x
 			print(bbl_arr[-1].name)
 	
 	for i in size_arr:
