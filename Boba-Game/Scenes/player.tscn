@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://j1dmjk5rcrdl"]
+
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_c812h"]
+[ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_hfg5s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_058ji"]
+radius = 9.05539
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjcic"]
+size = Vector2(21.19, 15.21)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_c812h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_hfg5s")
+hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_058ji")
+
+[node name="WallCheck" type="ShapeCast2D" parent="."]
+scale = Vector2(1.56, 1)
+shape = SubResource("RectangleShape2D_qjcic")
+target_position = Vector2(0, 0)
+collide_with_areas = true
