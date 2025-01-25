@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://nqm84ycf6oxd"]
+[gd_scene load_steps=5 format=4 uid="uid://nqm84ycf6oxd"]
 
 [ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="1_818ki"]
 [ext_resource type="PackedScene" uid="uid://j1dmjk5rcrdl" path="res://Scenes/player.tscn" id="2_nukjh"]
 [ext_resource type="PackedScene" uid="uid://mcm2so7wmi8k" path="res://Scenes/two_level_platform.tscn" id="4_bd2e3"]
+[ext_resource type="AudioStream" uid="uid://bad62r4ola2pv" path="res://Assets/001_-_Elemental_Forest.mp3" id="4_nkfy0"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(2, 2)
@@ -21,6 +22,7 @@ tile_set = ExtResource("1_818ki")
 position = Vector2(364, 68)
 
 [node name="Vert_platform" parent="." instance=ExtResource("4_bd2e3")]
-position = Vector2(576, 168)
 
-[editable path="Vert_platform"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nkfy0")
+autoplay = true
