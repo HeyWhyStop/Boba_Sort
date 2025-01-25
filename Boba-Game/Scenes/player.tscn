@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://j1dmjk5rcrdl"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_c812h"]
-[ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_hfg5s"]
+[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="2_c2ttw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_058ji"]
 radius = 9.05539
@@ -13,15 +13,18 @@ size = Vector2(21.19, 15.21)
 script = ExtResource("1_c812h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("2_hfg5s")
-hframes = 6
+position = Vector2(17, -1)
+texture = ExtResource("2_c2ttw")
+offset = Vector2(-13.635, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -2)
+scale = Vector2(22.7169, 22.7169)
 shape = SubResource("CircleShape2D_058ji")
 
 [node name="WallCheck" type="ShapeCast2D" parent="."]
-scale = Vector2(1.56, 1)
+position = Vector2(10, 0)
+scale = Vector2(-47.0154, -16.3432)
 shape = SubResource("RectangleShape2D_qjcic")
 target_position = Vector2(0, 0)
 collide_with_areas = true
