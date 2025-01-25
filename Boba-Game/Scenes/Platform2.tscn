@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://mcm2so7wmi8k"]
+[gd_scene load_steps=10 format=3 uid="uid://bboclp23b66qf"]
 
-[ext_resource type="Script" path="res://Scripts/two_level_platform.gd" id="1_ok5ua"]
-[ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="1_q54wr"]
-[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="4_8bfmy"]
+[ext_resource type="Script" path="res://Scripts/two_level_platform.gd" id="1_t0qtm"]
+[ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="2_58xs7"]
+[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="3_kyun0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4q5h"]
 size = Vector2(32, 16)
@@ -66,31 +66,35 @@ _data = {
 
 [node name="Node2D" type="AnimatableBody2D"]
 position = Vector2(576, 88)
-script = ExtResource("1_ok5ua")
+script = ExtResource("1_t0qtm")
 
 [node name="Top Plat" type="Sprite2D" parent="."]
+position = Vector2(-576, -88)
 scale = Vector2(4, 1)
-texture = ExtResource("1_q54wr")
+texture = ExtResource("2_58xs7")
 
 [node name="TopCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-576, -88)
 scale = Vector2(4, 1)
 shape = SubResource("RectangleShape2D_r4q5h")
 
 [node name="Bottom Plat" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, 256)
 scale = Vector2(4, 1)
-texture = ExtResource("1_q54wr")
+texture = ExtResource("2_58xs7")
 
 [node name="BottomCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 256)
 shape = SubResource("RectangleShape2D_51lm8")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(0, 8)
-tile_map_data = PackedByteArray("AAD8/xAAAQAAAAAAAQD8/xEAAQAAAAAAAQD8/wgAAQAAAAAAAQD8/wkAAQAAAAAAAQD8/woAAQAAAAAAAQD8/wsAAQAAAAAAAQD8/wwAAQAAAAAAAQD8/wQAAQAAAAAAAQD8/wUAAQAAAAAAAQD8/wYAAQAAAAAAAQD8/wcAAQAAAAAAAQD8/wAAAQAAAAAAAQD8/wEAAQAAAAAAAQD8/wIAAQAAAAAAAQD8/wMAAQAAAAAAAQD8//r/AQAAAAAAAQD8//v/AQAAAAAAAQD8//z/AQAAAAAAAQA=")
-tile_set = ExtResource("4_8bfmy")
+position = Vector2(-182, 33)
+tile_set = ExtResource("3_kyun0")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = -72.0
 offset_top = 112.0
 offset_right = 72.0
