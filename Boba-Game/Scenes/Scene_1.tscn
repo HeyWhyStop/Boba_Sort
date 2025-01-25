@@ -19,7 +19,7 @@ tile_map_data = PackedByteArray("AAD/////AAACAAMAAAD//xIAAAACAAMAAAD//xMAAAACAAM
 tile_set = ExtResource("1_818ki")
 
 [node name="player" parent="." instance=ExtResource("2_nukjh")]
-position = Vector2(364, 68)
+position = Vector2(48, 68)
 scale = Vector2(0.0528303, 0.0528303)
 
 [node name="Vert_platform" parent="." instance=ExtResource("4_bd2e3")]
