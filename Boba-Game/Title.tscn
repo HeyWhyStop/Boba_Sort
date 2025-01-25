@@ -3,7 +3,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_0e6k5"]
 font_size = 216
 
-[node name="TItle" type="Control"]
+[node name="Title" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
