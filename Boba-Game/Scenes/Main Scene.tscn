@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://mcm2so7wmi8k" path="res://Scenes/two_level_platform.tscn" id="4_bd2e3"]
 [ext_resource type="AudioStream" uid="uid://bad62r4ola2pv" path="res://Assets/001_-_Elemental_Forest.mp3" id="4_nkfy0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 scale = Vector2(2, 2)
 
 [node name="Node2D" type="Node2D" parent="."]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmiyamwqyl28a"]
+
+[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="1_6ls5c"]
+[ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_strjq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6ls5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(8, 12)
+scale = Vector2(1.83333, 6.5)
+texture = ExtResource("2_strjq")

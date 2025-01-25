@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://d113u557e5lec"]
+[gd_scene load_steps=5 format=3 uid="uid://denyqxrtydmkb"]
 
 [ext_resource type="Script" path="res://Scripts/bubble_sort.gd" id="1_djtgj"]
-[ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_dqgyu"]
+[ext_resource type="Script" path="res://Scripts/bubble_tower_.gd" id="2_tu52r"]
+[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="2_wwry5"]
+[ext_resource type="PackedScene" uid="uid://cmiyamwqyl28a" path="res://Scenes/bubble_tower_test.tscn" id="3_y03lx"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_djtgj")
 size = 8
 metadata/size = 9
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="bbl_twr_test_bdy" parent="." instance=ExtResource("3_y03lx")]
+position = Vector2(50, 348.132)
+
+[node name="bubble_tower_body" type="Sprite2D" parent="."]
+position = Vector2(448, 336)
+texture = ExtResource("2_wwry5")
+
+[node name="bubble_tower" type="Node2D" parent="."]
 scale = Vector2(2, 10)
-texture = ExtResource("2_dqgyu")
+script = ExtResource("2_tu52r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(448, 336)
+zoom = Vector2(0.25, 0.25)
