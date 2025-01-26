@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://mcm2so7wmi8k"]
+[gd_scene load_steps=9 format=3 uid="uid://mcm2so7wmi8k"]
 
 [ext_resource type="Script" path="res://Scripts/two_level_platform.gd" id="1_ok5ua"]
 [ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="1_q54wr"]
-[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="4_8bfmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4q5h"]
 size = Vector2(32, 16)
@@ -27,7 +26,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xfjuj"]
 resource_name = "move_down"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,7 +34,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(576, 88), Vector2(576, 168)]
@@ -84,11 +83,6 @@ texture = ExtResource("1_q54wr")
 [node name="BottomCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 160)
 shape = SubResource("RectangleShape2D_51lm8")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(0, 8)
-tile_map_data = PackedByteArray("AAD8//r/AQAAAAAAAQD8//v/AQAAAAAAAQD8//z/AQAAAAAAAQD8/wAAAQAAAAAAAQD8/wEAAQAAAAAAAQD8/wIAAQAAAAAAAQD8/wMAAQAAAAAAAQD8/wQAAQAAAAAAAQD8/wUAAQAAAAAAAQD8/wYAAQAAAAAAAQD8/woAAQAAAAAAAQD8/wsAAQAAAAAAAQD8/wwAAQAAAAAAAQD8//n/AQAAAAAAAQD8//j/AQAAAAAAAQD8/w4AAQAAAAAAAQD8/w0AAQAAAAAAAQA=")
-tile_set = ExtResource("4_8bfmy")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
