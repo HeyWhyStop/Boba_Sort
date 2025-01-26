@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
-var speed : int = 100
-var flip: int = -1
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var wall_check: ShapeCast2D = $WallCheck
+
+@export var spawn_point: Vector2 = Vector2(0,0)
+
+var speed : int = 100
+var flip: int = -1
+
 
 func _physics_process(delta: float) -> void:
 	velocity.x = speed * flip
