@@ -1,19 +1,31 @@
 extends Node
 
+#@export var scale = 1
+
 @export var size = 5
-@export var dist_x = 430
-@export var dist_y = 400
-@export var button_y = 50
+@export var dist_x = 21
+@export var dist_y = 22
+@export var button_y = 12
+
+#var sorted = false
 
 var size_arr = []
 var bubble_tower_base = load("res://Scenes/bubble_tower_test.tscn")
 var swapper = load("res://Scenes/swapper.tscn")
 var bbl_arr = []
+@export var wall = Node2D
+#@export var wall_visible = false
 #var button_arr = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	wall = self.get_child(0)
+	wall.visible = false
+	#dist_x *= scale
+	#dist_y *= scale
+	#button_y *= scale
+	
 	#bubble_tower_base = self.get_child(0)
 	#print(bubble_tower_base.name)
 	var random = RandomNumberGenerator.new()
@@ -38,7 +50,7 @@ func _ready() -> void:
 	for i in range(size - 1):
 		var button = swapper.instantiate();
 		self.add_child(button)
-		button.position.y = self.position.y + button_y
+		button.position.y = button_y
 		button.position.x = (bbl_arr[i].position.x + bbl_arr[i + 1].position.x) / 2
 		button.get_child(0).set_indexes(i, i + 1)
 	
@@ -94,6 +106,17 @@ func swap(first: int, second: int) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#if(wall_visible):
+		#wall.visible = true
+	#else:
+		#wall.visible = false
+	for i in range(size_arr.size() - 1):
+		if(size_arr[i] < size_arr[i + 1]):
+			wall.visible = false
+			print("not sorted")
+			return
+	wall.visible = true
+	print("sorted!")
 	
 	pass
 	

@@ -1,16 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmiyamwqyl28a"]
+[gd_scene load_steps=5 format=3 uid="uid://cmiyamwqyl28a"]
 
-[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="1_6ls5c"]
 [ext_resource type="Script" path="res://Scripts/bubble_tower_.gd" id="1_f02bc"]
-[ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_strjq"]
+[ext_resource type="Texture2D" uid="uid://cbwtiwek6jb6h" path="res://Assets/red_pearl.png" id="2_2t4u7"]
+[ext_resource type="PackedScene" uid="uid://b4p8nwkq6g3q2" path="res://Scenes/wall.tscn" id="2_5iaax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5egt"]
+size = Vector2(464, 438.937)
 
 [node name="bubble_tower_part" type="Node2D"]
 script = ExtResource("1_f02bc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6ls5c")
+[node name="Wall" parent="." instance=ExtResource("2_5iaax")]
+visible = false
+position = Vector2(0, 32)
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(8, 12)
-scale = Vector2(1.83333, 6.5)
-texture = ExtResource("2_strjq")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.053, 0.053)
+texture = ExtResource("2_2t4u7")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/RigidBody2D"]
+position = Vector2(14, 4.12977)
+shape = SubResource("RectangleShape2D_m5egt")

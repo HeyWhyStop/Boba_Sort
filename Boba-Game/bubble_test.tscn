@@ -1,15 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://denyqxrtydmkb"]
+[gd_scene load_steps=6 format=4 uid="uid://denyqxrtydmkb"]
 
 [ext_resource type="Script" path="res://Scripts/bubble_sort.gd" id="1_djtgj"]
+[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="2_ejyc3"]
+[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="2_wwry5"]
+[ext_resource type="Script" path="res://Scripts/wall.gd" id="3_o48by"]
+[ext_resource type="PackedScene" uid="uid://b4p8nwkq6g3q2" path="res://Scenes/wall.tscn" id="4_rmwrr"]
 
 [node name="bubble_sort_maker" type="Node2D"]
-position = Vector2(0, -1000)
 metadata/size = 9
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(448, 336)
-zoom = Vector2(0.15, 0.15)
+zoom = Vector2(1.5, 1.5)
 
-[node name="bubble_sort_maker_child" type="Node2D" parent="."]
+[node name="bubble_sort_maker_child" type="Node2D" parent="." node_paths=PackedStringArray("wall")]
 position = Vector2(0, 250)
 script = ExtResource("1_djtgj")
+wall = NodePath("TileMapLayer")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="bubble_sort_maker_child"]
+position = Vector2(0, 8)
+tile_map_data = PackedByteArray("AAD8//r/AAADAAEAAAD8//v/AAADAAEAAAD8//z/AAADAAEAAAD8/wAAAAADAAEAAAD8/wEAAAADAAEAAAD8/wIAAAADAAEAAAD8/wMAAAADAAEAAAD8/wQAAAADAAEAAAD8/wUAAAADAAEAAAD8/wYAAAADAAEAAAD8/woAAQAAAAAAAQD8/wsAAQAAAAAAAQD8/wwAAQAAAAAAAQD8/w0AAQAAAAAAAQD8//3/AAADAAEAAAD8//7/AAADAAEAAAD8////AAADAAEAAAD8/wcAAAADAAEAAAA=")
+tile_set = ExtResource("2_ejyc3")
+script = ExtResource("3_o48by")
+
+[node name="Wall2" parent="bubble_sort_maker_child/TileMapLayer" instance=ExtResource("4_rmwrr")]
+position = Vector2(-64, 160)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_wwry5")

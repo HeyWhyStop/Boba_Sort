@@ -1,6 +1,7 @@
 extends Node
 
 var bubble_sort_base = load("res://Scenes/bubble_tower_test.tscn")
+@export var wall = Node2D
 #var parent = self.get_parent().get_script()
 #var parent_script
 var dist_y
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func init(other_dist_y, other_size, pos_x, pos_y) -> void:
+func init(other_dist_y, other_size, pos_x, pos_y, can_bounce = false) -> void:
 	self.position.x = pos_x
 	self.position.y = pos_y
 	dist_y = other_dist_y
