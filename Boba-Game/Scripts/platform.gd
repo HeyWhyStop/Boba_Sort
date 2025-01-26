@@ -2,6 +2,8 @@ extends Node2D
 
 @export var x_move: int = 0
 @export var y_move: int = 0
+var start: Vector2 = Vector2.ZERO
+var end: Vector2 =  Vector2.ZERO
 @export var time: float = 1
 
 @onready var platform: AnimatableBody2D = $AnimatableBody2D
