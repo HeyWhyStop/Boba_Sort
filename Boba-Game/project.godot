@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+PauseButton="*res://Scripts/RestartButton.gd"
 Global="*res://Scenes/global.tscn"
 Swapper="*res://Scripts/swapper.gd"
 
