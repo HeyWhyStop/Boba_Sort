@@ -8,7 +8,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = speed * Global.flip
 	
 	$Sprite2D.rotate((Global.flip)*0.07)
-	
+	is_on_wall()
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
