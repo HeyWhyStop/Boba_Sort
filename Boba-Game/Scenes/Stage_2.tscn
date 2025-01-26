@@ -20,8 +20,9 @@ tile_map_data = PackedByteArray("AAD/////AAACAAMAAAD//xIAAAACAAMAAAD//xMAAAACAAM
 tile_set = ExtResource("1_tlenm")
 
 [node name="player" parent="." instance=ExtResource("2_wxb12")]
-position = Vector2(36, 52)
+position = Vector2(32, 48)
 scale = Vector2(0.0528303, 0.0528303)
+spawn_point = Vector2(32, 48)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_h7e3o")
