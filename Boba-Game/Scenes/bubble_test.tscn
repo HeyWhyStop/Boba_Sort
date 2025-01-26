@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://denyqxrtydmkb"]
+[gd_scene load_steps=4 format=4 uid="uid://denyqxrtydmkb"]
 
-[ext_resource type="Script" path="res://Scripts/bubble_sort.gd" id="1_djtgj"]
-[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="2_ejyc3"]
-[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="2_wwry5"]
-[ext_resource type="Script" path="res://Scripts/wall.gd" id="3_o48by"]
-[ext_resource type="PackedScene" uid="uid://b4p8nwkq6g3q2" path="res://Scenes/wall.tscn" id="4_rmwrr"]
+[ext_resource type="Script" path="res://Scripts/bubble_sort.gd" id="1_vunla"]
+[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="2_y5gsp"]
+[ext_resource type="Texture2D" uid="uid://4f3pvya6l1dv" path="res://Assets/enderpearl.png" id="3_skagj"]
 
 [node name="bubble_sort_maker" type="Node2D"]
 metadata/size = 9
@@ -16,18 +14,14 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="bubble_sort_maker_child" type="Node2D" parent="." node_paths=PackedStringArray("wall")]
 position = Vector2(0, 250)
-script = ExtResource("1_djtgj")
+script = ExtResource("1_vunla")
 wall = NodePath("TileMapLayer")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="bubble_sort_maker_child"]
 position = Vector2(32, 8)
 tile_map_data = PackedByteArray("AAD8//z/AAAEAAEAAAD8//3/AAAEAAEAAAD8//7/AAAEAAEAAAD8////AAAEAAEAAAD8//n/AAAEAAEAAAD8//r/AAAEAAEAAAD8//v/AAAEAAEAAAD8/wAAAAAEAAEAAAD9/wAAAAAEAAEAAAD+/wAAAAAEAAEAAAD//wAAAAAEAAEAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAEAAAACAAAAAAAEAAEAAAADAAAAAAAEAAEAAAA=")
-tile_set = ExtResource("2_ejyc3")
-script = ExtResource("3_o48by")
-
-[node name="Wall2" parent="bubble_sort_maker_child/TileMapLayer" instance=ExtResource("4_rmwrr")]
-position = Vector2(-64, 160)
+tile_set = ExtResource("2_y5gsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_wwry5")
+texture = ExtResource("3_skagj")
