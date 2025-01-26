@@ -1,17 +1,84 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1v7xgjj67hyj"]
+[gd_scene load_steps=7 format=3 uid="uid://b1v7xgjj67hyj"]
 
+[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_57tyh"]
 [ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="1_vg1iy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxw8x"]
 size = Vector2(111.771, 16)
 
-[node name="AnimatedSprite2D" type="AnimatableBody2D"]
-scale = Vector2(1.00205, 1.04016)
+[sub_resource type="Animation" id="Animation_ns6bp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="Animation" id="Animation_7toyp"]
+resource_name = "move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucx2s"]
+_data = {
+"RESET": SubResource("Animation_ns6bp"),
+"move": SubResource("Animation_7toyp")
+}
+
+[node name="AnimatedSprite2D" type="Node2D"]
+scale = Vector2(1.00205, 1.04016)
+script = ExtResource("1_57tyh")
+x_move = -30
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 scale = Vector2(3.49284, 0.980695)
 texture = ExtResource("1_vg1iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hxw8x")
+
+[node name="Button1" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ucx2s")
+}
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

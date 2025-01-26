@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://did36a4b6iyhj"]
 
 [ext_resource type="Texture2D" uid="uid://bw8kkd2fxbrrv" path="res://Assets/platformer_grass_set.png" id="1_bfqhn"]
-[ext_resource type="PackedScene" uid="uid://b4p8nwkq6g3q2" path="res://Scenes/wall.tscn" id="2_mdrdm"]
+[ext_resource type="PackedScene" uid="uid://b4p8nwkq6g3q2" path="res://Scenes/LetFall.tscn" id="2_mdrdm"]
 [ext_resource type="Texture2D" uid="uid://cbvnvco7gkd6a" path="res://Assets/Platform Track.png" id="3_kw4wu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4ase"]
