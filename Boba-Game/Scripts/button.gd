@@ -1,7 +1,7 @@
 extends AnimatableBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-var up = false
+var up = true
 
 
 func _on_button_pressed() -> void:
@@ -17,4 +17,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		up = false
 	if anim_name == "move_up":
 		up = true
-	
+	pass # Replace with function body.

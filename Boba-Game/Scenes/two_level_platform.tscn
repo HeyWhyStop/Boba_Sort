@@ -10,6 +10,21 @@ size = Vector2(32, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51lm8"]
 size = Vector2(128, 16)
 
+[sub_resource type="Animation" id="Animation_st0gv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 88)]
+}
+
 [sub_resource type="Animation" id="Animation_xfjuj"]
 resource_name = "move_down"
 length = 3.0
@@ -24,21 +39,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(576, 88), Vector2(576, 168)]
-}
-
-[sub_resource type="Animation" id="Animation_st0gv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, 88)]
 }
 
 [sub_resource type="Animation" id="Animation_pe1u8"]
@@ -77,24 +77,42 @@ scale = Vector2(4, 1)
 shape = SubResource("RectangleShape2D_r4q5h")
 
 [node name="Bottom Plat" type="Sprite2D" parent="."]
-position = Vector2(0, 256)
+position = Vector2(0, 160)
 scale = Vector2(4, 1)
 texture = ExtResource("1_q54wr")
 
 [node name="BottomCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 256)
+position = Vector2(0, 160)
 shape = SubResource("RectangleShape2D_51lm8")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 8)
-tile_map_data = PackedByteArray("AAD8//r/AQAAAAAAAQD8//v/AQAAAAAAAQD8//z/AQAAAAAAAQD8/wAAAQAAAAAAAQD8/wEAAQAAAAAAAQD8/wIAAQAAAAAAAQD8/wMAAQAAAAAAAQD8/wQAAQAAAAAAAQD8/wUAAQAAAAAAAQD8/wYAAQAAAAAAAQD8/wcAAQAAAAAAAQD8/wgAAQAAAAAAAQD8/wkAAQAAAAAAAQD8/woAAQAAAAAAAQD8/wsAAQAAAAAAAQD8/wwAAQAAAAAAAQD8/xAAAQAAAAAAAQD8/xEAAQAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAD8//r/AQAAAAAAAQD8//v/AQAAAAAAAQD8//z/AQAAAAAAAQD8/wAAAQAAAAAAAQD8/wEAAQAAAAAAAQD8/wIAAQAAAAAAAQD8/wMAAQAAAAAAAQD8/wQAAQAAAAAAAQD8/wUAAQAAAAAAAQD8/wYAAQAAAAAAAQD8/woAAQAAAAAAAQD8/wsAAQAAAAAAAQD8/wwAAQAAAAAAAQD8/w0AAQAAAAAAAQA=")
 tile_set = ExtResource("4_8bfmy")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -72.0
-offset_top = 112.0
-offset_right = 72.0
-offset_bottom = 144.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -36.0
+offset_top = 64.0
+offset_right = 36.0
+offset_bottom = 96.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -36.0
+offset_top = 224.0
+offset_right = 36.0
+offset_bottom = 256.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -36.0
+offset_top = -96.0
+offset_right = 36.0
+offset_bottom = -64.0
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -102,4 +120,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
