@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="2_yicp3"]
 [ext_resource type="PackedScene" uid="uid://j1dmjk5rcrdl" path="res://Scenes/player.tscn" id="3_58f1k"]
 [ext_resource type="PackedScene" uid="uid://caoc8dvuw0fox" path="res://Scenes/cup.tscn" id="3_hojy6"]
-[ext_resource type="PackedScene" uid="uid://b1v7xgjj67hyj" path="res://Scenes/Moving_Platform.tscn" id="4_rlyr7"]
+[ext_resource type="PackedScene" path="res://Scenes/Moving_Platform.tscn" id="4_rlyr7"]
 [ext_resource type="PackedScene" uid="uid://d3oraym05jh0j" path="res://Scenes/timerBar.tscn" id="6_hvosi"]
 
 [node name="Node2D" type="Node2D"]

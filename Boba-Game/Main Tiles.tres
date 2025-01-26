@@ -1,7 +1,6 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://did36a4b6iyhj"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://did36a4b6iyhj"]
 
 [ext_resource type="Texture2D" uid="uid://bw8kkd2fxbrrv" path="res://Assets/platformer_grass_set.png" id="1_bfqhn"]
-[ext_resource type="PackedScene" uid="uid://b4p8nwkq6g3q2" path="res://Scenes/LetFall.tscn" id="2_mdrdm"]
 [ext_resource type="Texture2D" uid="uid://cbvnvco7gkd6a" path="res://Assets/Platform Track.png" id="3_kw4wu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4ase"]
@@ -46,8 +45,27 @@ texture = ExtResource("1_bfqhn")
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="Resource" id="Resource_ocabi"]
+metadata/__load_path__ = "res://Scripts/wall.gd"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apk8x"]
+size = Vector2(16, 16)
+
+[sub_resource type="PackedScene" id="PackedScene_mt0u0"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741828, 1073741827, 16, 15, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("Wall", "Node2D", "Sprite2D", "Sprite2D", "visible", "texture", "hframes", "vframes", "frame", "Area2D", "Area2D", "script", "CollisionShape2D", "CollisionShape2D", "shape", "_on_body_entered", "body_entered"),
+"node_count": 4,
+"node_paths": [NodePath("."), NodePath("."), NodePath("./Area2D"), NodePath("Area2D"), NodePath("Area2D")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 5, 4, 0, 5, 1, 6, 2, 7, 3, 8, 4, 0, 1073741825, 0, 10, 9, -1, 1, 11, 5, 0, 1073741826, 0, 13, 12, -1, 1, 14, 6, 0),
+"variants": [false, ExtResource("1_bfqhn"), 5, 4, 17, SubResource("Resource_ocabi"), SubResource("RectangleShape2D_apk8x")],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bsudl"]
-scenes/1/scene = ExtResource("2_mdrdm")
+scenes/1/scene = SubResource("PackedScene_mt0u0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3oaqg"]
 texture = ExtResource("3_kw4wu")
