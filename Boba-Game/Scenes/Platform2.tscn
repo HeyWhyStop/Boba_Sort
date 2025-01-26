@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bboclp23b66qf"]
+[gd_scene load_steps=10 format=3 uid="uid://c6dnot4dpbdf2"]
 
 [ext_resource type="Script" path="res://Scripts/two_level_platform.gd" id="1_t0qtm"]
 [ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="2_58xs7"]

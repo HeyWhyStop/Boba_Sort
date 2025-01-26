@@ -54,11 +54,9 @@ texture = ExtResource("3_kw4wu")
 1:0/0 = 0
 2:0/0 = 0
 0:1/0 = 0
-0:1/0/texture_origin = Vector2i(-8, 0)
 1:1/0 = 0
-1:1/0/texture_origin = Vector2i(-8, 0)
 2:1/0 = 0
-2:1/0/texture_origin = Vector2i(-8, 0)
+1:2/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
