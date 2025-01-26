@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://caoc8dvuw0fox"]
+
+[ext_resource type="Texture2D" uid="uid://b5lr868kcws5x" path="res://Assets/emptycup.png" id="1_hrbvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhaka"]
+size = Vector2(20, 30)
+
+[node name="Cup" type="Node2D"]
+
+[node name="Emptycup" type="Sprite2D" parent="."]
+scale = Vector2(0.172605, 0.172605)
+texture = ExtResource("1_hrbvp")
+offset = Vector2(148.465, -41.63)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-29, -22, -15, 51, 14, 50, 29, -24, 18, -23, 11, 43, -9, 43, -17, -24)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 25)
+shape = SubResource("RectangleShape2D_jhaka")

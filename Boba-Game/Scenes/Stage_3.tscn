@@ -1,162 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://dsjmnmd7bj85m"]
+[gd_scene load_steps=5 format=4 uid="uid://dsjmnmd7bj85m"]
 
 [ext_resource type="AudioStream" uid="uid://bad62r4ola2pv" path="res://Assets/001_-_Elemental_Forest.mp3" id="1_u1lbn"]
 [ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="2_yicp3"]
 [ext_resource type="PackedScene" uid="uid://j1dmjk5rcrdl" path="res://Scenes/player.tscn" id="3_58f1k"]
 [ext_resource type="PackedScene" uid="uid://b1v7xgjj67hyj" path="res://Scenes/Moving_Platform.tscn" id="4_rlyr7"]
-
-[sub_resource type="Animation" id="Animation_cn785"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(184, 72)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Plat 2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(56, 328)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Plat 3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(56, 296)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Plat 4:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(472, 40)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Plat 5:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(584, 296)]
-}
-
-[sub_resource type="Animation" id="Animation_oigkn"]
-resource_name = "move_1"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(184, 72), Vector2(184, 248)]
-}
-
-[sub_resource type="Animation" id="Animation_a6htx"]
-resource_name = "move_2"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Plat 2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(56, 328), Vector2(56, 40)]
-}
-
-[sub_resource type="Animation" id="Animation_toix4"]
-resource_name = "move_3"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Plat 3:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(56, 296), Vector2(360, 296)]
-}
-
-[sub_resource type="Animation" id="Animation_ig4ag"]
-resource_name = "move_4"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Plat 4:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(472, 40), Vector2(472, 296)]
-}
-
-[sub_resource type="Animation" id="Animation_0nits"]
-resource_name = "move_5"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Plat 5:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(584, 296), Vector2(584, 40)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7atwo"]
-_data = {
-"RESET": SubResource("Animation_cn785"),
-"move_1": SubResource("Animation_oigkn"),
-"move_2": SubResource("Animation_a6htx"),
-"move_3": SubResource("Animation_toix4"),
-"move_4": SubResource("Animation_ig4ag"),
-"move_5": SubResource("Animation_0nits")
-}
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(2, 2)
@@ -183,29 +30,8 @@ tile_set = ExtResource("2_yicp3")
 position = Vector2(284, 52)
 scale = Vector2(0.0528303, 0.0528303)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Plat 1")
-libraries = {
-"": SubResource("AnimationLibrary_7atwo")
-}
-
 [node name="Plat 1" parent="." instance=ExtResource("4_rlyr7")]
 position = Vector2(184, 72)
-y_move = 30
-
-[node name="Button1_1" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_left = 168.0
-offset_top = 232.0
-offset_right = 200.0
-offset_bottom = 264.0
-
-[node name="Button1_2" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_left = 168.0
-offset_top = 56.0
-offset_right = 200.0
-offset_bottom = 88.0
 
 [node name="Plat 2" parent="." instance=ExtResource("4_rlyr7")]
 position = Vector2(56, 328)
@@ -218,6 +44,3 @@ position = Vector2(472, 40)
 
 [node name="Plat 5" parent="." instance=ExtResource("4_rlyr7")]
 position = Vector2(584, 296)
-
-[connection signal="pressed" from="Button1_1" to="Plat 1" method="_on_button_1_1_pressed"]
-[connection signal="pressed" from="Button1_2" to="Plat 1" method="_on_button_1_2_pressed"]
