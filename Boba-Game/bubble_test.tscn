@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/bubble_sort.gd" id="1_djtgj"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_djtgj")
+[node name="bubble_sort_maker" type="Node2D"]
+position = Vector2(0, -1000)
 metadata/size = 9
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(448, 336)
 zoom = Vector2(0.15, 0.15)
+
+[node name="bubble_sort_maker_child" type="Node2D" parent="."]
+position = Vector2(0, 250)
+script = ExtResource("1_djtgj")

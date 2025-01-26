@@ -1,12 +1,15 @@
 extends Node
 
 @export var size = 5
-@export var dist_x = 250
-@export var dist_y = 250
+@export var dist_x = 430
+@export var dist_y = 400
+@export var button_y = 50
 
 var size_arr = []
 var bubble_tower_base = load("res://Scenes/bubble_tower_test.tscn")
+var swapper = load("res://Scenes/swapper.tscn")
 var bbl_arr = []
+#var button_arr = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +22,7 @@ func _ready() -> void:
 		if(size_arr.find(rand_int) < 0):
 			size_arr.append(rand_int)
 			var child = bubble_tower_base.instantiate()
-			child.init(dist_y, size_arr[-1] - 1, self.position.x, -dist_y)
+			child.init(dist_y, size_arr[-1], self.position.x, 0)
 			#child.get_script().size = self.size - 1
 			#child.position.x = self.position.x
 			#child.position.y = self.position.y
@@ -28,11 +31,66 @@ func _ready() -> void:
 			child.copy_up()
 			self.position.x += dist_x
 			print(bbl_arr[-1].name)
+			
+	
+	if !Swapper.is_connected("start_swap", swap):
+		Swapper.start_swap.connect(swap)
+	for i in range(size - 1):
+		var button = swapper.instantiate();
+		self.add_child(button)
+		button.position.y = self.position.y + button_y
+		button.position.x = (bbl_arr[i].position.x + bbl_arr[i + 1].position.x) / 2
+		button.get_child(0).set_indexes(i, i + 1)
 	
 	for i in size_arr:
 		print(i);
 	pass # Replace with function body.
 
+func swap(first: int, second: int) -> void:
+	var temp_size = size_arr[first]
+	var tower1_x = bbl_arr[first].position.x
+	var tower2_x = bbl_arr[second].position.x
+	
+	
+	print("swapping sizes ", size_arr[first], " and ", size_arr[second])
+	#var temp_tower_first = bubble_tower_base.instantiate()
+	#temp_tower_first.init(dist_y, size_arr[first], bbl_arr[second].position.x, -dist_y)
+	#var temp_tower_second = bubble_tower_base.instantiate()
+	#temp_tower_second.init(dist_y, size_arr[second], bbl_arr[first].position.x, -dist_y)
+	#self.add_child(temp_tower_first)
+	#self.add_child(temp_tower_second)
+	#bbl_arr[first].visible = false
+	#bbl_arr[second].visible = false
+	#bbl_arr[first].set_process(false)
+	#bbl_arr[second].set_process(false)
+	#bbl_arr[first].free()
+	#bbl_arr[second].free()
+	#var timer = Timer.new()
+	#timer.set_wait_time(0.5)
+	#timer.start()
+
+	
+	#bbl_arr[first].position.x = bbl_arr[second].position.x
+	#bbl_arr[first].position.y = bbl_arr[second].position.y
+	#bbl_arr[second].position.x = temp_tower_x
+	#bbl_arr[second].position.x = temp_tower_y
+	
+	#var temp_tower = bubble_tower_base.instantiate()
+	#temp_tower.init(dist_y, size_arr[first], self.position.x, -dist_y)
+	#var temp_tower = bbl_arr[first]
+	
+	#bbl_arr[first] = temp_tower_second
+	#bbl_arr[second] = temp_tower_first
+	
+	var temp_tower = bbl_arr[first]
+	bbl_arr[first] = bbl_arr[second]
+	bbl_arr[second] = temp_tower
+	bbl_arr[first].position.x = tower1_x
+	bbl_arr[second].position.x = tower2_x
+	
+	size_arr[first] = size_arr[second]
+	size_arr[second] = temp_size
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

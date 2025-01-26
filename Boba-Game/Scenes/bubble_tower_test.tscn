@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/bubble_tower_.gd" id="1_f02bc"]
 [ext_resource type="Texture2D" uid="uid://bwec4ju66infm" path="res://Assets/platform_player.png" id="2_strjq"]
 
-[node name="Node2D" type="Node2D"]
+[node name="bubble_tower_part" type="Node2D"]
 script = ExtResource("1_f02bc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

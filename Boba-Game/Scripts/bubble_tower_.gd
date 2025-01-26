@@ -29,7 +29,7 @@ func init(other_dist_y, other_size, pos_x, pos_y) -> void:
 	size = other_size
 	print("size = ", size)
 func copy_up():
-	if(size <= 0):
+	if(size <= 1):
 		return
 	var copy = bubble_sort_base.instantiate()
 	copy.init(dist_y, size - 1, 0, -dist_y)
