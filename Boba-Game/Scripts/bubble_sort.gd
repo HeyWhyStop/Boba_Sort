@@ -112,10 +112,10 @@ func _process(delta: float) -> void:
 		#wall.visible = false
 	for i in range(size_arr.size() - 1):
 		if(size_arr[i] < size_arr[i + 1]):
-			wall.visible = false
+			wall.visible = true
 			print("not sorted")
 			return
-	wall.visible = true
+	wall.visible = false
 	print("sorted!")
 	
 	pass
