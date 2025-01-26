@@ -1,18 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://cev3q2w6xd26s"]
 
+[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_57tyh"]
 [ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="1_vg1iy"]
+[ext_resource type="TileSet" uid="uid://did36a4b6iyhj" path="res://Main Tiles.tres" id="3_bprf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxw8x"]
-size = Vector2(95.8036, 16)
+size = Vector2(111.771, 15.6911)
 
-[node name="AnimatedSprite2D" type="AnimatableBody2D"]
+[node name="Platform" type="Node2D"]
+position = Vector2(0, 1.90735e-06)
 scale = Vector2(1.00205, 1.04016)
+script = ExtResource("1_57tyh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2.86102e-06, -0.154444)
-scale = Vector2(2.99386, 0.980695)
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(0, -1.83371e-06)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(0, -1.83371e-06)
+scale = Vector2(3.49284, 0.961392)
 texture = ExtResource("1_vg1iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.66206e-06, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -1.83371e-06)
 shape = SubResource("RectangleShape2D_hxw8x")
+
+[node name="Button1" type="Button" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+self_modulate = Color(0, 1, 0, 1)
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 24.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 252, 255, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0)
+tile_set = ExtResource("3_bprf2")
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
