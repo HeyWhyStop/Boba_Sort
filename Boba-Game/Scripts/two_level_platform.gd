@@ -1,7 +1,7 @@
 extends AnimatableBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-var up = true
+var up = false
 
 
 func _on_button_pressed() -> void:
