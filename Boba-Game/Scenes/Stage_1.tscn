@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b1v7xgjj67hyj" path="res://Scenes/Moving_Platform.tscn" id="5_r6g3l"]
 [ext_resource type="PackedScene" uid="uid://caoc8dvuw0fox" path="res://Scenes/cup.tscn" id="6_vu18k"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 scale = Vector2(2, 2)
 
 [node name="Node2D" type="Node2D" parent="."]

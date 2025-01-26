@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2k5wqyf520j5"]
+
+[ext_resource type="Texture2D" uid="uid://cnhb4of3qx77f" path="res://Assets/moving_platform.png" id="1_g2e8j"]
+[ext_resource type="Script" path="res://Scripts/swapper.gd" id="1_rpyan"]
+
+[node name="swapper" type="Node2D"]
+scale = Vector2(0.053, 0.053)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+icon = ExtResource("1_g2e8j")
+expand_icon = true
+script = ExtResource("1_rpyan")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
