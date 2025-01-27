@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://diru2ptm0i38l"]
+[gd_scene load_steps=3 format=3 uid="uid://diru2ptm0i38l"]
 
 [ext_resource type="Script" path="res://Scripts/title.gd" id="1_8gw7o"]
 [ext_resource type="Texture2D" uid="uid://4mmsadpc3cmo" path="res://Assets/bobaTitle.png" id="2_ilnrb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0e6k5"]
-font_size = 216
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -21,33 +18,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 20.0
-offset_bottom = 80.0
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 14.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.9823, 0.9823)
+scale = Vector2(0.991216, 0.913968)
 texture = ExtResource("2_ilnrb")
 
-[node name="Container" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Container"]
-modulate = Color(0.760668, 0.520517, 0.216329, 1)
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-text = "Boba Sort"
-label_settings = SubResource("LabelSettings_0e6k5")
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="Container"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
+offset_left = 449.0
+offset_top = 565.0
+offset_right = 1290.0
+offset_bottom = 728.0
 theme_override_font_sizes/font_size = 191
-text = "Play Game"
 flat = true
 
-[connection signal="pressed" from="Container/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

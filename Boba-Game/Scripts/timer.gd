@@ -1,23 +1,12 @@
 extends Control
 
-@export var timer = Timer
-@export var label = RichTextLabel
-@export var path = ""
+@onready var bar: TextureProgressBar = $TextureProgressBar
 
+@export var time: int = 10
 
-func _ready()->void: 
-	pass
-	#label.set_autowrap_mode(0)	#self.add_child(timer)
-	#timer.start(10)
-	#timer.connect("timeout",control, "_on_timer_timeout")
-	
-	
-func _process(delta:float)->void:
-	label.text = str(ceil(timer.time_left))
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	bar.value = 100
 
-
-
-func _on_timer_timeout() -> void:
-	print("timeout")
-	get_tree().change_scene_to_file(path)
-	pass # Replace with function body.
+func _process(delta: float) -> void:
+	bar.value -= (100/time) * delta

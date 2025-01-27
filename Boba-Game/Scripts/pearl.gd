@@ -25,3 +25,6 @@ func _physics_process(delta: float) -> void:
 		pass
 	
 	move_and_slide()
+
+func _on_reset_button_pressed() -> void:
+	position = spawn_point
