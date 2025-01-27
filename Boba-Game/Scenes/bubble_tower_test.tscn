@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmiyamwqyl28a"]
+
+[ext_resource type="Script" path="res://Scripts/bubble_tower_.gd" id="1_f02bc"]
+[ext_resource type="Texture2D" uid="uid://cbwtiwek6jb6h" path="res://Assets/red_pearl.png" id="2_2t4u7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5egt"]
+size = Vector2(464, 438.937)
+
+[node name="bubble_tower_part" type="Node2D"]
+script = ExtResource("1_f02bc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.053, 0.053)
+texture = ExtResource("2_2t4u7")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/RigidBody2D"]
+position = Vector2(14, 4.12977)
+shape = SubResource("RectangleShape2D_m5egt")
